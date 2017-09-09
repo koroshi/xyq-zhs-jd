@@ -2,8 +2,20 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<style type="text/css">
+		#main{
+			margin:0 auto ;
+			width: 1200px;
+		}
+		img {
+			float: right;
+			width: 700px;
+		}
+		</style>
 	</head>
 	<body>
+	<div id="main">
+		<img src="images/maoling.png">
 		<div class="row"> 
 			<label>目标等级:</label>
 			<input type="number" name="dj" id="dj" value="138">
@@ -63,14 +75,17 @@
 		<div class="row"> 
 			<label>内丹气血:</label>
 			<input type="number" name="ndqx" id="ndqx" value="110">
+			<!-- <input type="number" name="ndqx" id="ndqx" value="165"> -->
 		</div>
 		<div class="row"> 
 			<label>内丹速度:</label>
 			<input type="number" name="ndsd" id="ndsd" value="24">
+			<!-- <input type="number" name="ndsd" id="ndsd" value="36"> -->
 		</div>
 		<div class="row"> 
 			<label>内丹伤害:</label>
 			<input type="number" name="ndsh" id="ndsh" value="22">
+			<!-- <input type="number" name="ndsh" id="ndsh" value="33"> -->
 		</div>
 		<div class="row"> 
 			<label>潜能:</label>
@@ -107,7 +122,10 @@
 			<label>实际:699</label>
 		</div>
 		<button onclick="cal()">计算</button>
+		
+	</div>
 	</body>
+
 	<script type="text/javascript">
 
 		function getFloatVauleById(id){
@@ -171,17 +189,17 @@
 		
 		function cal (){
 			init();
-			var tmpQx = dj*tlzz/1000+tz*czl*6+ndqx;
+			var tmpQx = Math.floor(dj*tlzz/1000+tz*czl*6+ndqx);
 			//召唤兽气血=等级*体力资质/1000+体质点数*成长*6
-			var tmpMf = dj*flzz/500+fl*czl*3;
+			var tmpMf = Math.floor(dj*flzz/500)+Math.floor(fl*czl*3);
 			//召唤兽魔法=等级*法力资质/500+法力点数*成长*3
-			var tmpGj = dj*gjzz*(14+10*czl)/7500+ll*czl+ndsh*4/3;		
+			var tmpGj = Math.floor(dj*gjzz*(14+10*czl)/7500)+Math.floor(ll*czl+Math.floor(ndsh*4/3));		
 			//召唤兽伤害=等级*攻击资质*(14+10*成长)/7500+力量点数*成长
-			var tmpFy = dj*fyzz*(9.4+19/3*czl)/7500+nl*czl*4/3;		
+			var tmpFy = Math.floor(dj*fyzz*(9.4+19/3*czl)/7500+nl*czl*4/3);		
 			//召唤兽防御=等级*防御资质*(9.4+19/3*成长)/7500+耐力点数*成长*4/3
-			var tmpSd = mj*sdzz/1000+ndsd;		
+			var tmpSd = Math.floor(mj*sdzz/1000+ndsd);		
 			//召唤兽速度=敏捷点数*速度资质/1000\
-			var tmpLingl = dj*(flzz+1662)*(1+czl)/7500+tz*0.3+nl*0.2+ll*0.4+fl*0.7;		
+			var tmpLingl = Math.floor(dj*(flzz+1662)*(1+czl)/7500)+Math.floor(tz*0.3)+Math.floor(nl*0.2)+Math.floor(ll*0.4)+Math.floor(fl*0.7);		
 			//召唤兽灵力=等级*(法力资质+1662)*(1+成长)/7500+体质点数*0.3+耐力点数*0.2+力量点数*0.4+法力点数*0.7
 			var tmpQn = (100+dj*10+lx*2+qjl) -(tz+fl+ll+nl+mj) 
 			setElementById('qx',tmpQx)
