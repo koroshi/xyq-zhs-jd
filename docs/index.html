@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+		<div class="row"> 
+			<label>目标等级:</label>
+			<input type="number" name="dj" id="dj" value="138">
+		</div>
+		<div class="row"> 
+			<label>成长率:</label>
+			<input type="number" name="czl" id="czl" value="1.29">
+		</div>
+		<div class="row"> 
+			<label>体力资质:</label>
+			<input type="number" name="tlzz" id="tlzz" value="4522">
+		</div>
+		<div class="row"> 
+			<label>法力资质:</label>
+			<input type="number" name="flzz" id="flzz" value="2310">
+		</div>
+		<div class="row"> 
+			<label>攻击资质:</label>
+			<input type="number" name="gjzz" id="gjzz" value="1499">
+		</div>
+		<div class="row"> 
+			<label>防御资质:</label>
+			<input type="number" name="fyzz" id="fyzz" value="1378">
+		</div>
+		<div class="row"> 
+			<label>速度资质:</label>
+			<input type="number" name="sdzz" id="sdzz" value="1350">
+		</div>
+		<div class="row"> 
+			<label>体资:</label>
+			<input type="number" name="tz" id="tz" value="323">
+		</div>
+		<div class="row"> 
+			<label>法力:</label>
+			<input type="number" name="fl" id="fl" value="165">
+		</div>
+		<div class="row"> 
+			<label>力量:</label>
+			<input type="number" name="ll" id="ll" value="730">
+		</div>
+		<div class="row"> 
+			<label>耐力:</label>
+			<input type="number" name="nl" id="nl" value="163">
+		</div>
+		<div class="row"> 
+			<label>敏捷:</label>
+			<input type="number" name="mj" id="mj" value="166">
+		</div>
+		<div class="row"> 
+			<label>灵性:</label>
+			<input type="number" name="lx" id="lx" value="30">
+		</div>
+		<div class="row"> 
+			<label>千金露:</label>
+			<input type="number" name="qjl" id="qjl" value="7">
+		</div>
+		<div class="row"> 
+			<label>内丹气血:</label>
+			<input type="number" name="ndqx" id="ndqx" value="110">
+		</div>
+		<div class="row"> 
+			<label>内丹速度:</label>
+			<input type="number" name="ndsd" id="ndsd" value="24">
+		</div>
+		<div class="row"> 
+			<label>内丹伤害:</label>
+			<input type="number" name="ndsh" id="ndsh" value="22">
+		</div>
+		<div class="row"> 
+			<label>潜能:</label>
+			<input type="number" name="qn" id="qn" disabled="disabled" readonly="readonly">
+		</div>
+		<div class="row"> 
+			<label>气血:</label>
+			<input type="number" name="qx" id="qx"  disabled="disabled" readonly="readonly">
+			<label>实际:3234</label>
+		</div>
+		<div class="row"> 
+			<label>魔法:</label>
+			<input type="number" name="mf" id="mf" disabled="disabled" readonly="readonly">
+			<label>实际:1275</label>
+		</div>
+		<div class="row"> 
+			<label>攻击:</label>
+			<input type="number" name="gj" id="gj" disabled="disabled" readonly="readonly">
+			<label>实际:1710</label>
+		</div>
+		<div class="row"> 
+			<label>防御:</label>
+			<input type="number" name="fy" id="fy" disabled="disabled" readonly="readonly">
+			<label>实际:725</label>
+		</div>
+		<div class="row"> 		
+			<label>速度:</label>
+			<input type="number" name="sd" id="sd"  disabled="disabled" readonly="readonly">
+			<label>实际:248</label>
+		</div>
+		<div class="row"> 		
+			<label>灵力:</label>
+			<input type="number" name="lingl" id="lingl" disabled="disabled" readonly="readonly">
+			<label>实际:699</label>
+		</div>
+		<button onclick="cal()">计算</button>
+	</body>
+	<script type="text/javascript">
+
+		function getFloatVauleById(id){
+			return parseFloat(document.getElementById(id).value)
+		}
+		function setElementById(id,value){
+			document.getElementById(id).value = value;
+		}
+		var dj = getFloatVauleById("dj")
+		var czl = getFloatVauleById("czl")
+		var tlzz = getFloatVauleById("tlzz")
+		var flzz = getFloatVauleById("flzz")
+		var gjzz = getFloatVauleById("gjzz")
+		var fyzz = getFloatVauleById("fyzz")
+		var sdzz = getFloatVauleById("sdzz")
+		var tz = getFloatVauleById("tz")
+		var fl = getFloatVauleById("fl")
+		var ll = getFloatVauleById("ll")
+		var nl = getFloatVauleById("nl")
+		var mj = getFloatVauleById("mj")
+		var lx = getFloatVauleById("lx")
+		var qjl = getFloatVauleById("qjl")
+		var qn = getFloatVauleById("qn")
+		var qx = getFloatVauleById("qx")
+		var mf = getFloatVauleById("mf")
+		var gj = getFloatVauleById("gj")
+		var fy = getFloatVauleById("fy")
+		var sd = getFloatVauleById("sd")
+		var lingl = getFloatVauleById("lingl")
+		var ndqx = getFloatVauleById("ndqx")
+		var ndsd = getFloatVauleById("ndsd")
+		var ndsh = getFloatVauleById("ndsh")
+		function init(){
+			dj = getFloatVauleById("dj")
+			czl = getFloatVauleById("czl")
+			tlzz = getFloatVauleById("tlzz")
+			flzz = getFloatVauleById("flzz")
+			gjzz = getFloatVauleById("gjzz")
+			fyzz = getFloatVauleById("fyzz")
+			sdzz = getFloatVauleById("sdzz")
+			tz = getFloatVauleById("tz")
+			fl = getFloatVauleById("fl")
+			ll = getFloatVauleById("ll")
+			nl = getFloatVauleById("nl")
+			mj = getFloatVauleById("mj")
+			lx = getFloatVauleById("lx")
+			qjl = getFloatVauleById("qjl")
+			qn = getFloatVauleById("qn")
+			qx = getFloatVauleById("qx")
+			mf = getFloatVauleById("mf")
+			gj = getFloatVauleById("gj")
+			fy = getFloatVauleById("fy")
+			sd = getFloatVauleById("sd")
+			lingl = getFloatVauleById("lingl")
+			ndqx = getFloatVauleById("ndqx")
+			ndsd = getFloatVauleById("ndsd")
+			ndsh = getFloatVauleById("ndsh")
+		}
+
+		
+		
+		function cal (){
+			init();
+			var tmpQx = dj*tlzz/1000+tz*czl*6+ndqx;
+			//召唤兽气血=等级*体力资质/1000+体质点数*成长*6
+			var tmpMf = dj*flzz/500+fl*czl*3;
+			//召唤兽魔法=等级*法力资质/500+法力点数*成长*3
+			var tmpGj = dj*gjzz*(14+10*czl)/7500+ll*czl+ndsh*4/3;		
+			//召唤兽伤害=等级*攻击资质*(14+10*成长)/7500+力量点数*成长
+			var tmpFy = dj*fyzz*(9.4+19/3*czl)/7500+nl*czl*4/3;		
+			//召唤兽防御=等级*防御资质*(9.4+19/3*成长)/7500+耐力点数*成长*4/3
+			var tmpSd = mj*sdzz/1000+ndsd;		
+			//召唤兽速度=敏捷点数*速度资质/1000\
+			var tmpLingl = dj*(flzz+1662)*(1+czl)/7500+tz*0.3+nl*0.2+ll*0.4+fl*0.7;		
+			//召唤兽灵力=等级*(法力资质+1662)*(1+成长)/7500+体质点数*0.3+耐力点数*0.2+力量点数*0.4+法力点数*0.7
+			var tmpQn =tz+fl+ll+nl+mj -(100+dj*10+lx*2+qjl)
+			setElementById('qx',tmpQx)
+			setElementById('mf',tmpMf)
+			setElementById('gj',tmpGj)
+			setElementById('fy',tmpFy)
+			setElementById('sd',tmpSd)
+			setElementById('lingl',tmpLingl)
+			setElementById('qn',tmpQn)
+		}
+		// 内丹22伤害 12速度 110气血 12速度
+		// 灵心30
+
+	</script>
+</html>
