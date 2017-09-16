@@ -18,7 +18,7 @@
 		<img src="images/maoling.png">
 		<div class="row"> 
 			<label>目标等级:</label>
-			<input type="number" name="dj" id="dj" value="138">
+			<input type="number" name="dj" id="dj" value="145">
 		</div>
 		<div class="row"> 
 			<label>成长率:</label>
@@ -46,45 +46,70 @@
 		</div>
 		<div class="row"> 
 			<label>体资:</label>
-			<input type="number" name="tz" id="tz" value="323">
+			<input type="number" name="tz" id="tz" value="472">
 		</div>
 		<div class="row"> 
 			<label>法力:</label>
-			<input type="number" name="fl" id="fl" value="165">
+			<input type="number" name="fl" id="fl" value="172">
 		</div>
 		<div class="row"> 
 			<label>力量:</label>
-			<input type="number" name="ll" id="ll" value="730">
+			<input type="number" name="ll" id="ll" value="773">
 		</div>
 		<div class="row"> 
 			<label>耐力:</label>
-			<input type="number" name="nl" id="nl" value="163">
+			<input type="number" name="nl" id="nl" value="170">
 		</div>
 		<div class="row"> 
 			<label>敏捷:</label>
-			<input type="number" name="mj" id="mj" value="166">
+			<input type="number" name="mj" id="mj" value="173">
 		</div>
 		<div class="row"> 
 			<label>灵性:</label>
-			<input type="number" name="lx" id="lx" value="30">
+			<input type="number" name="lx" id="lx" value="101">
 		</div>
 		<div class="row"> 
 			<label>千金露:</label>
-			<input type="number" name="qjl" id="qjl" value="7">
+			<input type="number" name="qjl" id="qjl" value="8">
 		</div>
 		<div class="row"> 
 			<label>内丹气血:</label>
-			<input type="number" name="ndqx" id="ndqx" value="110">
+			<input type="number" name="ndqx" id="ndqx" value="174">
 			<!-- <input type="number" name="ndqx" id="ndqx" value="165"> -->
 		</div>
 		<div class="row"> 
 			<label>内丹速度:</label>
-			<input type="number" name="ndsd" id="ndsd" value="24">
+			<input type="number" name="ndsd" id="ndsd" value="42">
 			<!-- <input type="number" name="ndsd" id="ndsd" value="36"> -->
 		</div>
 		<div class="row"> 
 			<label>内丹伤害:</label>
-			<input type="number" name="ndsh" id="ndsh" value="22">
+			<input type="number" name="ndsh" id="ndsh" value="33">
+			<!-- <input type="number" name="ndsh" id="ndsh" value="33"> -->
+		</div>
+		<div class="row"> 
+			<label>装备伤害:</label>
+			<input type="number" name="zbsh" id="zbsh" value="166">
+			<!-- <input type="number" name="ndsh" id="ndsh" value="33"> -->
+		</div>
+		<div class="row"> 	
+			<label>装备气血:</label>
+			<input type="number" name="zbqx" id="zbqx" value="60">
+			<!-- <input type="number" name="ndsh" id="ndsh" value="33"> -->
+		</div>
+		<div class="row"> 
+			<label>装备魔法:</label>
+			<input type="number" name="zbmf" id="zbmf" value="118">
+			<!-- <input type="number" name="ndsh" id="ndsh" value="33"> -->
+		</div>
+		<div class="row"> 	
+			<label>装备速度:</label>
+			<input type="number" name="zbsd" id="zbsd" value="26">
+			<!-- <input type="number" name="ndsh" id="ndsh" value="33"> -->
+		</div>
+		<div class="row"> 	
+			<label>装备防御:</label>
+			<input type="number" name="zbfy" id="zbfy" value="73">
 			<!-- <input type="number" name="ndsh" id="ndsh" value="33"> -->
 		</div>
 		<div class="row"> 
@@ -94,32 +119,32 @@
 		<div class="row"> 
 			<label>气血:</label>
 			<input type="number" name="qx" id="qx"  disabled="disabled" readonly="readonly">
-			<label>实际:3234</label>
+			<label>实际:4542</label>
 		</div>
 		<div class="row"> 
 			<label>魔法:</label>
 			<input type="number" name="mf" id="mf" disabled="disabled" readonly="readonly">
-			<label>实际:1275</label>
+			<label>实际:1452</label>
 		</div>
 		<div class="row"> 
 			<label>攻击:</label>
 			<input type="number" name="gj" id="gj" disabled="disabled" readonly="readonly">
-			<label>实际:1710</label>
+			<label>实际:2038</label>
 		</div>
 		<div class="row"> 
 			<label>防御:</label>
 			<input type="number" name="fy" id="fy" disabled="disabled" readonly="readonly">
-			<label>实际:725</label>
+			<label>实际:833</label>
 		</div>
 		<div class="row"> 		
 			<label>速度:</label>
 			<input type="number" name="sd" id="sd"  disabled="disabled" readonly="readonly">
-			<label>实际:248</label>
+			<label>实际:301</label>
 		</div>
 		<div class="row"> 		
 			<label>灵力:</label>
 			<input type="number" name="lingl" id="lingl" disabled="disabled" readonly="readonly">
-			<label>实际:699</label>
+			<label>实际:776</label>
 		</div>
 		<button onclick="cal()">计算</button>
 		
@@ -158,6 +183,12 @@
 		var ndqx = getFloatVauleById("ndqx")
 		var ndsd = getFloatVauleById("ndsd")
 		var ndsh = getFloatVauleById("ndsh")
+
+		var zbsh = getFloatVauleById("zbsh")
+		var zbqx = getFloatVauleById("zbqx")
+		var zbmf = getFloatVauleById("zbmf")
+		var zbfy = getFloatVauleById("zbfy")
+		var zbsd = getFloatVauleById("zbsd")
 		function init(){
 			dj = getFloatVauleById("dj")
 			czl = getFloatVauleById("czl")
@@ -183,21 +214,27 @@
 			ndqx = getFloatVauleById("ndqx")
 			ndsd = getFloatVauleById("ndsd")
 			ndsh = getFloatVauleById("ndsh")
+
+			zbsh = getFloatVauleById("zbsh")
+			zbqx = getFloatVauleById("zbqx")
+			zbmf = getFloatVauleById("zbmf")
+			zbfy = getFloatVauleById("zbfy")
+			zbsd = getFloatVauleById("zbsd")
 		}
 
 		
 		
 		function cal (){
 			init();
-			var tmpQx = Math.floor(dj*tlzz/1000+tz*czl*6+ndqx);
+			var tmpQx = Math.floor(dj*tlzz/1000+tz*czl*6+ndqx)+zbqx;
 			//召唤兽气血=等级*体力资质/1000+体质点数*成长*6
-			var tmpMf = Math.floor(dj*flzz/500)+Math.floor(fl*czl*3);
+			var tmpMf = Math.floor(dj*flzz/500)+Math.floor(fl*czl*3)+zbmf;
 			//召唤兽魔法=等级*法力资质/500+法力点数*成长*3
-			var tmpGj = Math.floor(dj*gjzz*(14+10*czl)/7500)+Math.floor(ll*czl+Math.floor(ndsh*4/3));		
+			var tmpGj = Math.floor(dj*gjzz*(14+10*czl)/7500)+Math.floor(ll*czl+Math.floor((ndsh+zbsh)*1.32));		
 			//召唤兽伤害=等级*攻击资质*(14+10*成长)/7500+力量点数*成长
-			var tmpFy = Math.floor(dj*fyzz*(9.4+19/3*czl)/7500+nl*czl*4/3);		
+			var tmpFy = Math.floor(dj*fyzz*(9.4+19/3*czl)/7500+nl*czl*4/3)+zbfy;		
 			//召唤兽防御=等级*防御资质*(9.4+19/3*成长)/7500+耐力点数*成长*4/3
-			var tmpSd = Math.floor(mj*sdzz/1000+ndsd);		
+			var tmpSd = Math.floor(mj*sdzz/1000+ndsd)+zbsd;		
 			//召唤兽速度=敏捷点数*速度资质/1000\
 			var tmpLingl = Math.floor(dj*(flzz+1662)*(1+czl)/7500)+Math.floor(tz*0.3)+Math.floor(nl*0.2)+Math.floor(ll*0.4)+Math.floor(fl*0.7);		
 			//召唤兽灵力=等级*(法力资质+1662)*(1+成长)/7500+体质点数*0.3+耐力点数*0.2+力量点数*0.4+法力点数*0.7
